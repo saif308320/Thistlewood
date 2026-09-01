@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oakwell Home Furnishings | Leeds</title>
+<meta name="description" content="Solid wood furniture showroom, Retail Park Road, Leeds. Sofas, beds, dining, desks. Delivery across Yorkshire.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--w:#3e2a1f;--sage:#6d8a6a;--cream:#f3ebe1;--paper:#fff9f1;--ink:#2a1e16;--mute:#7a6a5c;--line:#e0d2c2}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Outfit,sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block;background:#ddd}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:Fraunces,serif;font-weight:400;line-height:1.15}
+.ticker{background:var(--w);color:#e8d5bc;font-size:.75rem;padding:8px 0;overflow:hidden;white-space:nowrap}
+.ticker span{display:inline-block;padding-left:100%;animation:t 28s linear infinite}
+@keyframes t{to{transform:translateX(-100%)}}
+.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;padding:18px 4% 14px;border-bottom:8px solid var(--w);background:var(--paper);position:sticky;top:0;z-index:40}
+.mast nav{display:flex;gap:16px;font-size:.8rem;flex-wrap:wrap}
+.mast nav:last-of-type{justify-content:flex-end}
+.logo{text-align:center;font-size:1.8rem}
+.logo small{display:block;font-family:Outfit,sans-serif;font-size:.58rem;letter-spacing:.32em;color:var(--sage)}
+.burger{display:none;background:none;border:0;font-size:1.4rem}
+.look{position:relative;min-height:88vh}
+.look img{width:100%;height:88vh;object-fit:cover}
+.look .plate{position:absolute;left:6%;bottom:8%;background:var(--paper);padding:36px 40px;max-width:min(480px,90%);box-shadow:12px 12px 0 var(--w)}
+.look .k{letter-spacing:.22em;text-transform:uppercase;font-size:.68rem;color:var(--sage)}
+.look h1{font-size:clamp(2.2rem,4.5vw,3.8rem);color:var(--w);margin:10px 0 12px}
+.btn{display:inline-block;padding:12px 20px;border:0;cursor:pointer;font-family:inherit;font-size:.82rem}
+.btn-w{background:var(--w);color:var(--cream)}
+.btn-s{border:1px solid var(--w);background:transparent;margin-left:8px}
+.rooms{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:28px 4%;scrollbar-width:thin}
+.rooms a{min-width:min(280px,80vw);scroll-snap-align:start;position:relative;color:#fff}
+.rooms img{width:100%;height:340px;object-fit:cover}
+.rooms span{position:absolute;left:16px;bottom:16px;font-family:Fraunces,serif;font-size:1.5rem}
+.ed{padding:64px 4%;display:grid;grid-template-columns:180px 1fr;gap:32px}
+.rail{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage)}
+.cats{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px}
+.cats button{border:1px solid var(--line);background:var(--paper);padding:8px 14px;cursor:pointer;font-family:inherit}
+.cats button.on{background:var(--w);color:var(--cream);border-color:var(--w)}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.item{background:var(--paper);border:1px solid var(--line)}
+.item img{width:100%;height:200px;object-fit:cover}
+.item .m{padding:14px}
+.item .pr{color:var(--sage);font-weight:600}
+.item .dim{font-size:.78rem;color:var(--mute)}
+.focus{display:grid;grid-template-columns:1.3fr .7fr;min-height:70vh}
+.focus-g{display:grid;grid-template-rows:1.4fr 1fr;gap:6px;padding:6px;background:var(--w)}
+.focus-g img{width:100%;height:100%;object-fit:cover;min-height:180px}
+.focus-c{padding:48px 40px;background:var(--paper)}
+.focus-c h2{font-size:2.2rem;color:var(--w)}
+.focus-c .pr{font-size:1.8rem;color:var(--sage);margin:12px 0}
+.focus-c dl{display:grid;grid-template-columns:90px 1fr;gap:8px 12px;margin:16px 0 22px;font-size:.9rem}
+.swatches{display:flex;gap:8px;margin:12px 0 20px}
+.swatches i{width:28px;height:28px;border-radius:50%;display:block;border:1px solid var(--line)}
+.show{padding:0}
+.show-g{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:8px}
+.show-g img{width:100%;height:100%;object-fit:cover;min-height:200px}
+.show-g img:first-child{grid-row:span 2;min-height:520px}
+.craft{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--w);color:var(--cream)}
+.craft img{width:100%;height:100%;min-height:340px;object-fit:cover}
+.craft .t{padding:48px 36px}
+.del{padding:64px 4%}
+.del-g{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:24px;border-top:1px solid var(--line)}
+.del-g article{padding:28px 24px 28px 0;border-right:1px solid var(--line)}
+.del-g article:last-child{border:0}
+.mat{padding:64px 4%;background:var(--paper)}
+.mat-g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.mat-g article{border:1px solid var(--line);padding:20px}
+.mat-g img{height:120px;width:100%;object-fit:cover;margin-bottom:12px}
+.rev{padding:0;display:grid;grid-template-columns:repeat(3,1fr)}
+.rev article{padding:32px 24px;background:var(--paper);border-right:1px solid var(--line);display:flex;gap:14px}
+.rev img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.rev p{font-family:Fraunces,serif;font-style:italic;margin-bottom:8px}
+.faq{padding:64px 12%;background:var(--cream)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-family:Fraunces,serif;font-size:1.25rem}
+.visit{display:grid;grid-template-columns:380px 1fr;min-height:480px}
+.vcard{background:var(--w);color:var(--cream);padding:48px 36px}
+.vcard a{color:#e8c9a0}
+.map{width:100%;min-height:480px;border:0}
+.newsletter{padding:48px 4%;text-align:center;background:var(--paper);border-top:1px solid var(--line)}
+.newsletter form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.newsletter input{padding:12px 14px;border:1px solid var(--line);min-width:240px}
+footer{padding:18px 4%;display:flex;justify-content:space-between;font-size:.8rem;color:var(--mute);flex-wrap:wrap;gap:8px}
+.note{display:none;color:var(--sage);margin-top:10px}
+.ok{display:none;color:var(--sage);margin-top:10px}
+.reveal{opacity:0;transform:translateY(16px);transition:.7s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:980px){
+.mast{grid-template-columns:1fr auto}
+.mast nav{display:none}
+.mast nav.open{display:flex;flex-direction:column;grid-column:1/-1;padding-top:10px}
+.burger{display:block}
+.look .plate{left:4%;right:4%;max-width:none}
+.ed,.focus,.show-g,.craft,.del-g,.mat-g,.rev,.visit{grid-template-columns:1fr}
+.show-g img:first-child{min-height:240px}
+.look img{height:70vh}
+}
+@media(max-width:560px){
+.shelf{grid-template-columns:1fr}
+.rev article{flex-direction:column;align-items:center;text-align:center}
+.btn-s{margin:10px 0 0;display:inline-block}
+.ed{grid-template-columns:1fr;padding:40px 5%}
+}
+</style>
+</head>
+<body>
+<div class="ticker"><span>Free parking at the retail park · Two-person delivery crew · British oak and walnut · Dogs welcome if they behave · Assembly from £40 · </span></div>
+<header class="mast">
+  <nav id="n1">
+    <a href="#rooms">Rooms</a>
+    <a href="#shop">Shop</a>
+    <a href="#focus">Calder sofa</a>
+    <a href="#showroom">Showroom</a>
+  </nav>
+  <a class="logo" href="#home">Oakwell Home<small>LEEDS · EST. 1998</small></a>
+  <nav id="n2">
+    <a href="#craft">Workshop</a>
+    <a href="#delivery">Delivery</a>
+    <a href="#materials">Timber</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+</header>
+
+<section class="look" id="home">
+  <img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Living room">
+  <div class="plate">
+    <p class="k">Retail Park Road · LS10</p>
+    <h1>Sit on it in the shop. Then decide.</h1>
+    <p style="color:var(--mute);margin-bottom:20px">A Leeds showroom, not a warehouse. Oak, walnut, and sofas from a mill in Huddersfield. Lead times told up front.</p>
+    <a class="btn btn-w" href="#shop">See the floor</a>
+    <a class="btn btn-s" href="#visit">Hours</a>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <a href="#shop"><img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Living"><span>Living</span></a>
+  <a href="#shop"><img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Bedroom"><span>Bedroom</span></a>
+  <a href="#shop"><img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Dining"><span>Dining</span></a>
+  <a href="#shop"><img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Office"><span>Office</span></a>
+  <a href="#showroom"><img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Showroom"><span>Floor sets</span></a>
+</section>
+
+<section class="ed" id="shop">
+  <p class="rail">By room</p>
+  <div>
+    <h2 style="font-size:clamp(2rem,3.5vw,3rem);color:var(--w)">The floor</h2>
+    <p style="color:var(--mute);margin:8px 0 0">Prices include VAT. Assembly extra unless noted.</p>
+    <div class="cats" id="cats">
+      <button class="on" data-c="all">All</button>
+      <button data-c="living">Living Room</button>
+      <button data-c="bedroom">Bedroom</button>
+      <button data-c="dining">Dining</button>
+      <button data-c="office">Office</button>
+    </div>
+    <div class="shelf" id="grid">
+      <article class="item" data-c="living"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Sofa"><div class="m"><h3>Calder 3-seat</h3><p class="pr">£1,195</p><p class="dim">W 218 × D 92 × H 86 cm</p></div></article>
+      <article class="item" data-c="living"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Chair"><div class="m"><h3>Wharfe armchair</h3><p class="pr">£445</p><p class="dim">Wool blend, oak legs</p></div></article>
+      <article class="item" data-c="bedroom"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Bed"><div class="m"><h3>Ilkley oak bed</h3><p class="pr">£890</p><p class="dim">Kingsize · solid oak</p></div></article>
+      <article class="item" data-c="bedroom"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Wardrobe"><div class="m"><h3>Holbeck wardrobe</h3><p class="pr">£1,050</p><p class="dim">2 door, oak veneer</p></div></article>
+      <article class="item" data-c="dining"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Table"><div class="m"><h3>Aire dining table</h3><p class="pr">£760</p><p class="dim">Seats 6 · walnut top</p></div></article>
+      <article class="item" data-c="dining"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Dining chair"><div class="m"><h3>Kirkstall chair</h3><p class="pr">£145</p><p class="dim">Set of 2 from £270</p></div></article>
+      <article class="item" data-c="office"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Desk"><div class="m"><h3>Meanwood desk</h3><p class="pr">£520</p><p class="dim">W 140 × D 70 cm</p></div></article>
+      <article class="item" data-c="office"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/2179214/pexels-photo-2179214.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Shelves"><div class="m"><h3>Roundhay shelves</h3><p class="pr">£310</p><p class="dim">Oak · 5 shelves</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="focus" id="focus">
+  <div class="focus-g">
+    <img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Calder sofa">
+    <img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Room">
+  </div>
+  <div class="focus-c">
+    <p class="k">On the floor this week</p>
+    <h2>Calder 3-seat sofa</h2>
+    <p style="color:var(--mute)">People sit on it and then do not get up. Made near Halifax. Fabric from Huddersfield.</p>
+    <p class="pr">£1,195</p>
+    <p style="font-size:.8rem;color:var(--mute)">Fabric</p>
+    <div class="swatches">
+      <i style="background:#7d9a7a"></i><i style="background:#c4b49a"></i><i style="background:#4a3428"></i><i style="background:#6b7280"></i>
+    </div>
+    <dl>
+      <dt>Size</dt><dd>W 218 × D 92 × H 86 cm</dd>
+      <dt>Frame</dt><dd>Hardwood, sage wool-mix, oak legs</dd>
+      <dt>Lead</dt><dd>In store now · 4–6 weeks made to order</dd>
+    </dl>
+    <button class="btn btn-w" id="hold">Reserve in store</button>
+    <p class="note" id="note">Held 48 hours. The shop will phone you.</p>
+  </div>
+</section>
+
+<section class="show" id="showroom">
+  <div class="show-g">
+    <img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Showroom">
+    <img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Bedroom set">
+    <img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Dining">
+  </div>
+</section>
+
+<section class="craft" id="craft">
+  <img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1094767/pexels-photo-1094767.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Timber">
+  <div class="t">
+    <p class="k" style="color:#c4b089">Since 1998</p>
+    <h2 style="font-size:2rem;margin:8px 0 14px">A Leeds shop that still smells of beeswax.</h2>
+    <p style="color:#d9cbb8;font-weight:300">Margaret Oakwell opened a unit on Kirkstall Road with leftover dining chairs. Her son Tom runs the floor. Sell pieces that can be repaired. Most timber is British oak and walnut. Upholstery in West Yorkshire.</p>
+  </div>
+  <img referrerpolicy="no-referrer" src="https://images.pexels.com/photos/5974390/pexels-photo-5974390.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Maker">
+</section>
+
+<section class="del" id="delivery">
+  <p class="rail">Getting it home</p>
+  <h2 style="font-size:2.2rem;color:var(--w);margin-top:8px">Delivery & assembly</h2>
+  <div class="del-g">
+    <article class="reveal"><h3>Leeds & Bradford</h3><p style="color:var(--mute)">£45 within 15 miles. Two-person crew. Timed morning or afternoon. Stock pieces usually within 7 days.</p></article>
+    <article class="reveal"><h3>Rest of Yorkshire</h3><p style="color:var(--mute)">£75–£120 by postcode. Confirmed before you pay. Staircases measured on the phone.</p></article>
+    <article class="reveal"><h3>Assembly</h3><p style="color:var(--mute)">Beds, wardrobes, desks: £40–£90. Sofas arrive built. Packaging taken away if you want it gone.</p></article>
+  </div>
+</section>
+
+<section class="mat" id="materials">
+  <p class="rail">What it is made of</p>
+  <h2 style="font-size:2.2rem;color:var(--w);margin-top:8px">Timber & cloth</h2>
+  <div class="mat-g">
+    <article class="reveal"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/129733/pexels-photo-129733.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Oak"><h3>English oak</h3><p style="color:var(--mute);font-size:.88rem">Tables, beds, shelves. Oiled, not lacquered to death.</p></article>
+    <article class="reveal"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/172276/pexels-photo-172276.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Walnut"><h3>Walnut</h3><p style="color:var(--mute);font-size:.88rem">Dining tops. Darker grain. Shows every cup ring eventually — that is the point.</p></article>
+    <article class="reveal"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/3738088/pexels-photo-3738088.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Wool"><h3>Wool mix</h3><p style="color:var(--mute);font-size:.88rem">Huddersfield mill. Calder sofa in four colours.</p></article>
+    <article class="reveal"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1094767/pexels-photo-1094767.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Workshop"><h3>Joinery</h3><p style="color:var(--mute);font-size:.88rem">If a joint fails in ten years, bring it back.</p></article>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <article class="reveal"><img referrerpolicy="no-referrer" src="https://randomuser.me/api/portraits/women/21.jpg" alt="Helen"><div><p>“Bought the Calder after sitting on it for twenty minutes with a cup of tea they actually made.”</p><cite>Helen P. · Headingley</cite></div></article>
+  <article class="reveal"><img referrerpolicy="no-referrer" src="https://randomuser.me/api/portraits/men/45.jpg" alt="David"><div><p>“Dining table arrived Thursday as promised. The lads were careful with the skirting.”</p><cite>David & Jo · Roundhay</cite></div></article>
+  <article class="reveal"><img referrerpolicy="no-referrer" src="https://randomuser.me/api/portraits/women/57.jpg" alt="Amira"><div><p>“Lead time on the wardrobe was six weeks, which they told us. Finish is excellent.”</p><cite>Amira K. · Chapel Allerton</cite></div></article>
+</section>
+
+<section class="faq" id="faq">
+  <p class="rail">Before you drive over</p>
+  <h2 style="font-size:2.2rem;color:var(--w);margin:8px 0 16px">Questions</h2>
+  <details open><summary>Can I try the sofa if I have a dog?</summary><p style="color:var(--mute);margin-top:8px">Yes. Ours is usually under the desk. Bring a towel if yours sheds like ours.</p></details>
+  <details><summary>Do you finance?</summary><p style="color:var(--mute);margin-top:8px">No. We will hold a piece for 48 hours on a card. That is as far as we go.</p></details>
+  <details><summary>What if it does not fit up the stairs?</summary><p style="color:var(--mute);margin-top:8px">We measure on the phone. If we get it wrong, we take it back. Has happened twice in twenty years.</p></details>
+</section>
+
+<section class="visit" id="visit">
+  <div class="vcard">
+    <h2>Visit the floor</h2>
+    <p style="margin:14px 0">310 Retail Park Road<br>Leeds LS10 1AB</p>
+    <p><a href="tel:+441134960231">+44 113 496 0231</a></p>
+    <p><a href="mailto:showroom@oakwellhome.store">showroom@oakwellhome.store</a></p>
+    <p style="margin-top:18px">Mon–Sat 9:30–17:30<br>Sunday 11:00–16:00<br>Bank holidays: ring first</p>
+  </div>
+  <iframe class="map" title="Map" loading="lazy" src="https://maps.google.com/maps?q=Retail+Park+Road+Leeds+LS10&z=15&output=embed"></iframe>
+</section>
+
+<section class="newsletter" id="list">
+  <h2 style="color:var(--w)">New arrivals on a Tuesday email</h2>
+  <p style="color:var(--mute)">No discounts. Just what came onto the floor.</p>
+  <form id="nf"><input type="email" required placeholder="Email"><button class="btn btn-w" type="submit">Join</button></form>
+  <p class="ok" id="ok">You are on the list.</p>
+</section>
+<footer>
+  <span>Oakwell Home Furnishings · Leeds</span>
+  <span>© 2026 · Prices include VAT</span>
+</footer>
+<script>
+const b=document.getElementById('burger');
+b.onclick=()=>{document.getElementById('n1').classList.toggle('open');document.getElementById('n2').classList.toggle('open')};
+document.querySelectorAll('#cats button').forEach(x=>x.onclick=()=>{
+  document.querySelectorAll('#cats button').forEach(y=>y.classList.remove('on'));x.classList.add('on');
+  document.querySelectorAll('#grid .item').forEach(c=>c.style.display=x.dataset.c==='all'||c.dataset.c===x.dataset.c?'':'none');
+});
+document.getElementById('hold').onclick=()=>document.getElementById('note').style.display='block';
+document.getElementById('nf').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block'};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
